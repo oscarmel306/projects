@@ -1,4 +1,4 @@
-// misura impulso di un laser in millisecondi
+// test tempo di scatto macchina fotoggrafica analogica
 void setup() {
   Serial.begin(9600);
   pinMode(2, INPUT);
