@@ -1,4 +1,7 @@
-// test tempo di scatto macchina fotoggrafica analogica
+// test tempo di scatto macchina fotografica analogica
+// i valori di pulseIn sono in microsecondi 
+// il comando pulseIn fornisce la durata di in impulso. 
+
 void setup() {
   Serial.begin(9600);
   pinMode(2, INPUT);
