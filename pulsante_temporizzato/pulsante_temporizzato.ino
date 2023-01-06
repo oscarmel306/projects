@@ -1,4 +1,4 @@
-
+// quando premo il pulsante, il led rimane acceso per 1 secondo
 void setup() {
   
   // put your setup code here, to run once:
