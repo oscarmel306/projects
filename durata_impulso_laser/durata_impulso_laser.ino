@@ -5,12 +5,20 @@ void setup() {
 }
 
 void loop() {
-  unsigned long t = pulseIn(2, LOW,60000000);
+  float t = pulseIn(2, LOW,60000000);
   if (t == 0) {
     Serial.println("in attesa");
   } else {
-    Serial.print("durata impulso: ");
-    Serial.print(t/1000); 
-    Serial.println(" ms");
+  float tmillisec=t;
+    tmillisec=tmillisec/1000;
+    t=t/1000000;
+    t=1/t;
+    Serial.print("tempo di scatto: ");
+    Serial.print(" 1/"); 
+    Serial.print(t);
+    Serial.print(" di secondo; in millisecondi: ");
+    Serial.println(tmillisec);
+    
+
   }
 }
