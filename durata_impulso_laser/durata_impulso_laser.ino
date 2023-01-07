@@ -1,20 +1,23 @@
 // test tempo di scatto macchina fotografica analogica
-// i valori di pulseIn sono in microsecondi 
-// il comando pulseIn fornisce la durata di in impulso. 
+// il comando di arduino pulseIn fornisce la durata di in impulso in microsecondi. 
 
 void setup() {
   Serial.begin(9600);
-  pinMode(7, INPUT);
+  pinMode(7, INPUT); //imposto il pin7 come input (il 7 è un in digitale e non pwm)
 }
 
 void loop() {
-  float t = pulseIn(7, LOW,60000000);
+  float t = pulseIn(7, LOW,60000000); //se dopo 6 secondi non succede nulla, esco dal comando pulseIn che mi ritorna 0
   Serial.println("");
-  Serial.print(t);
+  Serial.print(t); // visualizzo la durata dell'impulso in microsecondi (tempo di apertura dell'otturatore)
   Serial.println(" microsecondi");
-  if (t == 0) {
+  if (t == 0) { // se il comando mi ha ritornato 0
     Serial.println("in attesa");
-  } else if (t > 1000000) {
+    
+    // per comodità, se il tempo di scatto è superiore a 1 secondo, riporto il risultato in secondi
+    // altrimenti in frazione
+    
+  } else if (t > 1000000) { 
     t= t/1000000;
     Serial.print("tempo di scatto: ");
     Serial.print(t);
