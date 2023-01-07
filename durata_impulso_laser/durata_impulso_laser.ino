@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  float t = pulseIn(2, LOW,60000000);
+  float t = pulseIn(7, LOW,60000000);
   Serial.println("");
   Serial.print(t);
   Serial.println(" microsecondi");
