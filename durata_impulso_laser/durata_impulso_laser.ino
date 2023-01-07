@@ -4,14 +4,14 @@
 
 void setup() {
   Serial.begin(9600);
-  pinMode(2, INPUT);
+  pinMode(7, INPUT);
 }
 
 void loop() {
   float t = pulseIn(2, LOW,60000000);
   Serial.println("");
-  Serial.println(t);
-  
+  Serial.print(t);
+  Serial.println(" microsecondi");
   if (t == 0) {
     Serial.println("in attesa");
   } else if (t > 1000000) {
