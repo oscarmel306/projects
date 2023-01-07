@@ -33,13 +33,15 @@ void setup() {
 }
 
 void loop() {
-  float t = pulseIn(2, LOW,60000000); //se dopo 60 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
-  float tusec=t;
+  unsigned long t = pulseIn(2, LOW,60000000); //se dopo 60 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
+  unsigned long tusec=t;
   Serial.println("");
   Serial.print(t); // visualizzo la durata dell'impulso in microsecondi (tempo di apertura dell'otturatore)
   Serial.println(" microsecondi");
+ 
   lcd.setCursor(0,0);
   lcd.print("                ");
+  lcd.setCursor(0,0);
   lcd.print(tusec);
   lcd.setCursor(10,0);
   lcd.print(" usec");
@@ -47,6 +49,7 @@ void loop() {
     // se il comando mi ha dato 0
   if (t == 0) { 
     Serial.println("in attesa");
+   
     lcd.setCursor(0, 0);
     lcd.print("in attesa       ");
     lcd.setCursor(0, 1);
