@@ -37,7 +37,7 @@ void loop() {
   unsigned long tusec=tl;
   float t = (float) tl;
   Serial.println("");
-  Serial.print(t); // visualizzo la durata dell'impulso in microsecondi (tempo di apertura dell'otturatore)
+  Serial.print(tusec); // visualizzo la durata dell'impulso in microsecondi (tempo di apertura dell'otturatore)
   Serial.println(" microsecondi");
  
   lcd.setCursor(0,0);
