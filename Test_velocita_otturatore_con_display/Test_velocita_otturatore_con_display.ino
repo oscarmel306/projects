@@ -33,9 +33,9 @@ void setup() {
 }
 
 void loop() {
-  unsigned long tl = pulseIn(2, LOW,60000000); //se dopo 60 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
-  unsigned long tusec=tl;
-  float t = (float) tl;
+  unsigned long tusec = pulseIn(2, HIGH,10000000); //se dopo 60 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
+  //unsigned long tl = tusec;
+  float t = (float) tusec;
   Serial.println("");
   Serial.print(tusec); // visualizzo la durata dell'impulso in microsecondi (tempo di apertura dell'otturatore)
   Serial.println(" microsecondi");
