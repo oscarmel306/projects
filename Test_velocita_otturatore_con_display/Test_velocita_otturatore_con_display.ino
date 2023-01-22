@@ -33,7 +33,7 @@ void setup() {
 }
 
 void loop() {
-  unsigned long tusec = pulseIn(2, HIGH,10000000); //se dopo 60 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
+  unsigned long tusec = pulseIn(2, HIGH,10000000); //se dopo 10 secondi non succede nulla, esco dal comando pulseIn, che mi da' 0
   //unsigned long tl = tusec;
   float t = (float) tusec;
   Serial.println("");
