@@ -27,6 +27,7 @@ int y, prev_y;
 void loop() {
     
     int var = analogRead(A0);
+    Serial.println(var);
 
     y = map(var, 0, 1023, SCREEN_HEIGHT - bordo, bordo);
     
@@ -39,7 +40,7 @@ void loop() {
       display.clearDisplay();     
       axis();  
     }
-    delay(5);
+    delay(100);
     display.display();       
 }
 
