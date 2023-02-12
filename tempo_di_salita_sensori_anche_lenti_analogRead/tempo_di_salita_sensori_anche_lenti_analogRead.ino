@@ -1,10 +1,10 @@
 
-unsigned long start, fin, t, impulso;
+unsigned long start, fin, t, finlento;
 
 
 
 void setup() {
-  pinMode (3, INPUT); // sensore laser
+  //pinMode (3, INPUT); // sensore laser
   pinMode (2, OUTPUT); // emettitore laser
   Serial.begin(9600);
   digitalWrite(2, LOW);
@@ -13,7 +13,14 @@ void setup() {
 void loop() {
   digitalWrite(2, HIGH);
   start=micros();
-  if(digitalRead(3)) {fin=micros();
+  //while(!digitalRead(3)) {
+  while(analogRead(A0)<1000) {    
+    Serial.println("in attesa");
+    Serial.println();  
+    Serial.println(analogRead(A0));
+    Serial.println();
+  }
+  fin=micros();
   t = fin - start;
   Serial.print(t);
   Serial.println("microsec");
@@ -24,12 +31,8 @@ void loop() {
   //Serial.println(impulso);
   //Serial.println();  
   digitalWrite(2, LOW);
-  }
-  else {Serial.println("in attesa");
-  digitalWrite(2, LOW); // se il sensore particolarmente lento, lasciare acceso il laser
   
 
-  }
   delay(1000);
 
 }
